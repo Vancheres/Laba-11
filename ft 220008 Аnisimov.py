@@ -57,3 +57,37 @@ def get_country(capital):
                 return country
         logging.warning('Столица "{}" не найдена.'.format(capital))
         return 'Столица "{}" не найдена.'.format(capital)
+# Основная функция
+def main():
+    """
+    Основная функция программы.
+    """
+
+    while True:
+        # Выбор режима работы
+        print('1 - Поиск столицы')
+        print('2 - Поиск страны')
+        print('0 - Выход')
+        choice = input('Введите номер пункта: ')
+
+        if choice == '1':
+            # Поиск столицы
+            country = input('Введите название страны: ')
+            capital = get_capital(country)
+            print(capital)
+
+        elif choice == '2':
+            # Поиск страны
+            capital = input('Введите название столицы: ')
+            country = get_country(capital)
+            print(country)
+
+        elif choice == '0':
+            # Выход
+            break
+
+        else:
+            print('Неверный выбор.')
+
+if __name__ == '__main__':
+    main()
